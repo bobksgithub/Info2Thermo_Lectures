@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{tabulary}
+\newcolumntype{K}[1]{>{\centering\arraybackslash}p{#1}}
+\begin{document}
+\begin{center}
+table with centred columns of specified width
+\bigskip
+
+\begin{tabular}{K{2cm}K{2cm}}
+\hline
+foo & bar \\
+foobar & barfoo \\
+\hline
+\end{tabular}
+\end{center}
+
+\bigskip
+\begin{table}[htp]
+ \caption{Hamming code properties.}
+\begin{center}
+\begin{tabular}{||K{1cm}|K{3cm}|K{3cm}|K{3cm}||}
+\hline\hline 
+$d$ &Parity &Detected Bits &Corrected Bits             \\ \hline
+       &Even  & $\frac{d}{2}$ & $\frac{d}{2}$                \\
+       &Odd   & $\frac{d-1}{2}$ & $\frac{d-1}{2}$          \\\hline\hline
+  1   &Odd.  &  0                     &      0                           \\
+  2   &Even &  1                     &       0                          \\
+  3   &Odd  &  1                     &       1                          \\
+  4   &Even &  2                     &       2                          \\
+  5   &Odd  &  2                     &       2                          \\
+  6   &Even &  3                     &       3                          \\
+  7   &Odd  &  3                     &       3                          \\
+$\cdots$&$\cdots$&$\cdots$&$\cdots$ \\ \hline\hline
+\end{tabular}
+\end{center}
+ \label{tab:HamCodeProps}
+\end{table}%
+
+\bigskip
+
+as we make the total width wider, the columns adjust \vskip0.5ex
+%\begin{equation*}
+%A = 
+%\begin{pmatrix}
+%1 & 2 & 3 \\
+%4 & 5 & 6 \\
+%7 & 8 & 9
+%\end{pmatrix}
+%\end{equation*}
+\begin{equation*}
+\mathbf {G^{T}} :=
+ \begin{pmatrix}
+ 1&1&0&1\\
+ 1&0&1&1\\
+ 1&0&0&0\\
+ 0&1&1&1\\
+ 0&1&0&0\\
+ 0&0&1&0\\
+ 0&0&0&1\\
+ \end{pmatrix},\qquad \mathbf {H} :={\begin{pmatrix}1&0&1&0&1&0&1\\0&1&1&0&0&1&1\\0&0&0&1&1&1&1\\\end{pmatrix}}
+\end{equation*}
+
+\end{document}

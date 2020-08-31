@@ -1,0 +1,473 @@
+\mode<presentation>
+{
+   % \usetheme{CambridgeUS}
+    %\usetheme{Madrid}
+    %  \usetheme{Warburg}
+    \setbeamercovered{transparent}
+    \usecolortheme{beaver}
+    \definecolor{darkred}{rgb}{0.8,0,0}
+    \definecolor{unime}{rgb}{0.77,0.12,0.23}
+
+    \setbeamercolor{alerted text}{fg=darkred!40!white}
+    \setbeamercolor*{palette primary}{fg=darkred!40!black,bg=red!85!white}
+    \setbeamercolor*{palette secondary}{fg=darkred!30!black,bg=red!60!white}
+    \setbeamercolor*{palette tertiary}{bg=darkred!60!black,fg=orange!20!white}
+    \setbeamercolor*{palette quaternary}{fg=darkred,bg=red!20!white}
+
+    \setbeamercolor*{sidebar}{fg=darkred,bg=orange!15!white}
+
+    \setbeamercolor*{palette sidebar primary}{fg=darkred!10!black}
+    \setbeamercolor*{palette sidebar secondary}{fg=white}
+    \setbeamercolor*{palette sidebar tertiary}{fg=darkred!50!black}
+    \setbeamercolor*{palette sidebar quaternary}{fg=red!10!white}
+
+    \setbeamercolor*{titlelike}{parent=palette primary}
+    \setbeamercolor{frametitle}{bg=darkred!40!white}
+    \setbeamercolor{frametitle right}{bg=darkred!30!white}
+
+    \setbeamercolor*{separation line}{}
+    \setbeamercolor*{fine separation line}{}
+}
+
+%\usepackage{beamerthemesplit}
+\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter}
+
+\setbeamerfont{footnote mark}{size=\tiny}
+
+%\setbeamertemplate{frametitle}[default][left]
+%\setbeamercovered{transparent}
+%
+
+%\makeatletter
+%\let\save@measuring@true\measuring@true
+%\def\measuring@true{%
+%  \save@measuring@true
+%  \def\beamer@sortzero##1{\beamer@ifnextcharospec{\beamer@sortzeroread{##1}}{}}%
+%  \def\beamer@sortzeroread##1<##2>{}%
+%  \def\beamer@finalnospec{}%
+%}
+%\makeatother
+\usepackage{etoolbox}
+
+% Definition %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{studentbrown}{RGB}{124,71,50}
+\definecolor{lightblue}{RGB}{28,71,93}
+
+\BeforeBeginEnvironment{block}{%
+    \setbeamercolor{block title}{fg=white,bg=studentbrown}
+    \setbeamercolor{block body}{fg=black, bg=studentbrown!20!white}
+}
+\AfterEndEnvironment{block}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+\BeforeBeginEnvironment{exampleblock}{%
+    \setbeamercolor{block title}{fg=white,bg=lightblue}
+    \setbeamercolor{block body}{fg=black, bg=lightblue!20!white}
+}
+\AfterEndEnvironment{exampleblock}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+\BeforeBeginEnvironment{definition}{%
+    \setbeamercolor{block title}{fg=white,bg=studentbrown}
+    \setbeamercolor{block body}{fg=black, bg=studentbrown!20!white}
+}
+\AfterEndEnvironment{definition}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+% Theorem %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\BeforeBeginEnvironment{theorem}{
+    \setbeamercolor{block title}{use=example text,fg=white,bg=example text.fg!75!black}
+    \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\AfterEndEnvironment{theorem}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+% Proposition %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{proposition}{Proposition}
+\BeforeBeginEnvironment{proposition}{
+        \setbeamercolor{block title}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+}
+\AfterEndEnvironment{proposition}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+%\newtheorem{ans}[theorem]{Answer}%%%%%%%%%%%%%%%
+%\newtheorem{ans}{Answer}
+%\BeforeBeginEnvironment{lemma}{
+%        \setbeamercolor{block title}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+%        \setbeamercolor{block body}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+%}
+%\AfterEndEnvironment{ans}{
+%        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+%        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+%}
+
+%\newtheorem{example}[theorem]{Example}%%%%%%%%%
+%\newtheorem{example}{Example}
+%\BeforeBeginEnvironment{example}{
+%        \setbeamercolor{block title}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+%        \setbeamercolor{block body}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+%}
+%\AfterEndEnvironment{example}{
+%        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+%        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+%}
+
+%\newtheorem{exercise}[theorem]{Exercise}%%%%%%%%%%%
+\newtheorem{exercise}{Exercise}
+\BeforeBeginEnvironment{exercise}{
+        \setbeamercolor{block title}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+}
+\AfterEndEnvironment{exercise}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+%\newtheorem{convention}[theorem]{Convention}%%%%%%%%%%%%%%
+\newtheorem{convention}{Convention}
+\BeforeBeginEnvironment{convention}{
+        \setbeamercolor{block title}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+}
+\AfterEndEnvironment{convention}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+%\newtheorem{statement}[theorem]{Statement}%%%%%%%%%%%%%%
+\newtheorem{statement}{Statement}
+\BeforeBeginEnvironment{statement}{
+        \setbeamercolor{block title}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+}
+\AfterEndEnvironment{statement}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+%\newtheorem{fact}[theorem]{Fact}%%%%%%%%%%%%
+%\newtheorem{fact}{Fact}
+%\BeforeBeginEnvironment{fact}{
+%        \setbeamercolor{block title}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+%        \setbeamercolor{block body}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+%}
+%\AfterEndEnvironment{fact}{
+%        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+%        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+%}
+
+%\newtheorem{axiom}[theorem]{Axiom}%%%%%%%%%%%%%
+\newtheorem{axiom}{Axiom}
+\BeforeBeginEnvironment{axiom}{
+        \setbeamercolor{block title}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+}
+\AfterEndEnvironment{axiom}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+%\newtheorem{problem}[theorem]{Problem}%%%%%%%%%%%%%%%%
+%\newtheorem{problem}{Problem}
+%\BeforeBeginEnvironment{problem}{
+%        \setbeamercolor{block title}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+%        \setbeamercolor{block body}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+%}
+%\AfterEndEnvironment{problem}{
+%        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+%        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+%}
+
+%\newtheorem{question}[theorem]{Q}%%%%%%%%%%%%%%%%%
+\newtheorem{question}{Q}
+\BeforeBeginEnvironment{question}{
+        \setbeamercolor{block title}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+}
+\AfterEndEnvironment{question}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+\definecolor{cyanBlue}{rgb}{0.0, 1.0, 1.0}
+
+
+\usepackage{longtable}
+\usepackage[append]{beamersubframe}
+
+\newcommand*{\mydprime}{^{\prime\prime}\mkern-1.2mu}
+\newcommand*{\mytprime}{^{\prime\prime\prime}\mkern-1.2mu}
+
+\usepackage{array}
+
+\usepackage{setspace}
+
+
+\usepackage{tabulary}
+\newcolumntype{K}[1]{>{\centering\arraybackslash}p{#1}}
+
+\usepackage{amsmath,lualatex-math}
+
+\usepackage{fontspec}
+%\usepackage{unicode-math}
+%\usepackage{tgpagella}
+\usepackage{multirow}
+
+%\setmainfont{stix}
+%\setmathfont{STIX}%[version=Stix]
+% Any of the following work, and probably many more
+%\setmathfont{TeX Gyre Pagella Math}
+%\setmathfont{TeX Gyre Termes Math}
+%\setmathfont{STIX}
+%\setmathfont{Asana Math}
+
+\usepackage{fbb}
+\setmainfont{fbb}[%
+UprightFeatures = {StylisticSet=01},
+BoldFeatures = {StylisticSet=01}
+]
+\usepackage{bbm}
+
+\usefonttheme{serif}
+\usefonttheme{professionalfonts}
+\usepackage[document]{ragged2e}
+%\usepackage[scaled=0.85]{beramono}
+%\usetheme[
+%%% option passed to the outer theme
+%    progressstyle=fixedCircCnt,   % fixedCircCnt, movingCircCnt (moving is deault)
+%  ]{Feather}
+  
+% If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
+\setbeamercolor{item projected}{bg=red}
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{navigation symbols}{}
+
+% Change the bar colors:
+%\setbeamercolor{Feather}{fg=red!60!black,bg=red!80!black}
+
+% Change the color of the structural elements:
+%\setbeamercolor{structure}{fg=red!80!black}
+
+% Change the frame title text color:
+\setbeamercolor{frametitle}{fg=white}
+
+% Change the normal text color background:
+%\setbeamercolor{normal text}{fg=black,bg=gray!10}
+
+% Have beamer use Figure numbers
+\setbeamertemplate{caption}[numbered]
+
+% Change the color of a block title
+\setbeamercolor{block title}{fg=black,bg=red!50!white} 
+
+
+%\setbeamertemplate{part page}
+%{
+%  \begin{centering}
+%    {\usebeamerfont{part name}\usebeamercolor[fg]{part name}\partname~\insertpartnumber}
+%    \vskip1em\par
+%    \begin{beamercolorbox}[sep=16pt,center]{part title}
+%      \usebeamerfont{part title}\insertpart\par
+%    \end{beamercolorbox}
+%  \end{centering}
+%}
+
+
+%-------------------------------------------------------
+% INCLUDE PACKAGES
+%-------------------------------------------------------
+
+\usepackage[rflt]{floatflt}
+\usepackage{tikz-cd}
+\usepackage{caption}
+\usepackage{pdfpc-commands}
+
+\usepackage{biblatex}
+
+%\theoremstyle{plain}
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{exercise}[theorem]{Exercise}
+%\newtheorem{convention}[theorem]{Convention}
+%\newtheorem{statement}[theorem]{Statement}
+%\newtheorem{fact}[theorem]{Fact}
+%\newtheorem{axiom}[theorem]{Axiom}
+%\newtheorem{problem}[theorem]{Problem}
+\theoremstyle{definition}
+%\newtheorem{question}[theorem]{Q}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\lcm}{\operatorname{lcm}}
+%\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Var}{\operatorname{var}}
+
+\usepackage{mathtools}
+
+\usepackage{physics}
+\usepackage{braket}
+\usepackage{wrapfig}
+\usepackage{pdfpages}
+
+\usepackage{tikz}
+
+\usetikzlibrary{external,automata,trees,positioning,shadows,arrows,shapes.geometric,shapes.misc,calc}
+\usepackage{geometry}
+%\usepackage[latin1]{inputenc}
+
+%\usepackage{bigfoot}
+%\DeclareNewFootnote{default}
+%\DeclareNewFootnote{A}[alph]
+
+\usepackage{commath}
+\usepackage[step]{animate}
+
+%\graphicspath{./pics/}
+
+\usepackage{amsthm} % Required for theorem environments
+\usepackage{bm} % Required for bold math symbols (used in the footer of the slides)
+\usepackage{graphicx} % Required for including images in figures
+
+\usepackage{booktabs} % Required for horizontal rules in tables
+\usepackage{multicol} % Required for creating multiple columns in slides
+\usepackage{lastpage} % For printing the total number of pages at the bottom of each slide
+%\usepackage[english]{babel} % Document language - required for customizing section titles
+\usepackage{microtype} % Better typography
+%\usepackage{tocstyle} % Required for customizing the table of contents
+\usepackage{gensymb} 
+
+%\setbeameroption{show notes on second screen}
+
+%\setbeamertemplate{note page}{\insertnote}
+
+
+%\usepackage{hanging}% http://ctan.org/pkg/hanging
+%\setbeamertemplate{footnote}{%
+%  \hangpara{2em}{1}%
+%  \makebox[2em][l]{\insertfootnotemark}\footnotesize\insertfootnotetext\par%
+%}
+
+%------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{textcomp}%
+%------------------------------------------------
+
+\usepackage{cancel}
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+
+\usepackage{csquotes}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\urlstyle{same}
+
+
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfdefinestyle{MyFrame}{%
+    linecolor=blue,
+    outerlinewidth=1pt,
+    roundcorner=3pt,
+    innertopmargin=\baselineskip,
+    innerbottommargin=\baselineskip,
+    innerrightmargin=15pt,
+    innerleftmargin=15pt,
+    backgroundcolor=gray!50!white}
+
+
+% Colors
+\usepackage{color}
+%\usetheme{default}
+%\usetheme[secheader]{Boadilla}
+
+\usepackage{xcolor}	 % Required for custom colors
+% Define a few colors for making text stand out within the presentation
+\definecolor{mygreen}{RGB}{44,85,17}
+\definecolor{myblue}{RGB}{34,31,217}
+\definecolor{mybrown}{RGB}{194,164,113}
+\definecolor{myred}{RGB}{255,66,56}
+\definecolor{babyblue}{RGB}{54,81,94}
+%-------------------------------------------------------
+% DEFFINING AND REDEFINING COMMANDS
+%-------------------------------------------------------
+
+%\newtheorem{thm}{Theorem}[section]
+\newtheorem{define}{Definition}[theorem]
+\newtheorem{pos}{Postulate}[theorem]
+
+\raggedcolumns
+\flushcolumns
+
+\newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
+
+
+%\setbeamertemplate{footline}[frame number]
+%\setbeamerfont{footline}{size=\normalsize, series=\bfseries}
+%\setbeamercolor{footline}{fg = black, bg = black}
+%\setbeamercolor{page number in head/foot}{fg = black}
+
+
+% colored hyperlinks
+\newcommand{\chref}[2]{
+  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
+}
+% Use these colors within the presentation by enclosing text in the commands below
+\newcommand*{\mygreen}[1]{\textcolor{mygreen}{#1}}
+\newcommand*{\myblue}[1]{\textcolor{myblue}{#1}}
+\newcommand*{\mybrown}[1]{\textcolor{mybrown}{#1}}
+\newcommand*{\myred}[1]{\textcolor{myred}{#1}}
+
+\newcommand{\mystar}{{\fontfamily{lmr}\selectfont$\star$}}
+
+%\setbeamertemplate{enumerate subitem}[circle]%
+\renewcommand{\insertsubenumlabel}{\alph{enumii}}
+
+\newcommand{\makepart}[1]{ % For convenience
+\part{Title of part #1} \frame{\partpage}
+\section{Section} \begin{frame} Section \end{frame}
+\subsection{Subsection} \begin{frame} Subsection \end{frame}
+\subsection{Subsection} \begin{frame} Subsection \end{frame}
+\section{Section} \begin{frame} Section \end{frame}
+}
+
+\newcommand*{\img}[1]{%
+    \raisebox{-.3\baselineskip}{%
+        \includegraphics[
+        height=\baselineskip,
+        width=\baselineskip,
+        keepaspectratio,
+        ]{#1}%
+    }%
+}
+
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{naturalnames}{hyperref}
+
+\makeatletter
+\newcommand\immaddtocontents[1]{{%
+   \let\protect\@unexpandable@protect
+   \immediate\write\@auxout{\noexpand\@writefile{toc}{#1}}%
+}}
+\makeatother
+\newcounter{nameOfYourChoice}
+
+
